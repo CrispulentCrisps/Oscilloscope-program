@@ -11,7 +11,7 @@ using System.Windows.Forms;
 //https://www.youtube.com/watch?v=ZnFoVuOVrUQ tutorial
 namespace Oscilloscope
 {
-    public partial class Form1: Form//MUST DERIVE FROM FORM!!!
+    public partial class Form1 : Form//MUST DERIVE FROM FORM!!!
     {
         long ByteLength = 16777216;
         int SamplingDivider = 4;
@@ -86,7 +86,8 @@ namespace Oscilloscope
         {
             switch (palletteNum)
             {
-                default:chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+                default:
+                    chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
                     break;
                 case 0:
                     chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
@@ -125,7 +126,7 @@ namespace Oscilloscope
                     chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
                     break;
             }
-            
+
         }
 
         private void grayscaleToolStripMenuItem_Click(object sender, EventArgs e)
@@ -243,7 +244,8 @@ namespace Oscilloscope
 
         private void helpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            HelpForm helpform = new HelpForm();
+            helpform.Show();
         }
     }
 }

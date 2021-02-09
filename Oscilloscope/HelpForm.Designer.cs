@@ -28,47 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Load");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Export");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("File", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2});
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Edit");
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("View");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Help");
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Load");
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Export");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("File", new System.Windows.Forms.TreeNode[] {
+            treeNode7,
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Edit");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("View");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Help");
+            this.HelpSelect = new System.Windows.Forms.TreeView();
+            this.HelpText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // treeView1
+            // HelpSelect
             // 
-            this.treeView1.Location = new System.Drawing.Point(13, 13);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Load";
-            treeNode1.Text = "Load";
-            treeNode2.Name = "Export";
-            treeNode2.Text = "Export";
-            treeNode3.Name = "File";
-            treeNode3.Text = "File";
-            treeNode4.Name = "Edit";
-            treeNode4.Text = "Edit";
-            treeNode5.Name = "View";
-            treeNode5.Text = "View";
-            treeNode6.Name = "Help";
-            treeNode6.Text = "Help";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4,
-            treeNode5,
-            treeNode6});
-            this.treeView1.Size = new System.Drawing.Size(147, 425);
-            this.treeView1.TabIndex = 0;
+            this.HelpSelect.Location = new System.Drawing.Point(13, 13);
+            this.HelpSelect.Name = "HelpSelect";
+            treeNode7.Name = "Load";
+            treeNode7.Tag = "Load";
+            treeNode7.Text = "Load";
+            treeNode8.Name = "Export";
+            treeNode8.Tag = "Export";
+            treeNode8.Text = "Export";
+            treeNode9.Name = "File";
+            treeNode9.Text = "File";
+            treeNode10.Name = "Edit";
+            treeNode10.Tag = "Edit";
+            treeNode10.Text = "Edit";
+            treeNode11.Name = "View";
+            treeNode11.Tag = "View";
+            treeNode11.Text = "View";
+            treeNode12.Name = "Help";
+            treeNode12.Tag = "Help";
+            treeNode12.Text = "Help";
+            this.HelpSelect.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode9,
+            treeNode10,
+            treeNode11,
+            treeNode12});
+            this.HelpSelect.Size = new System.Drawing.Size(147, 425);
+            this.HelpSelect.TabIndex = 0;
+            this.HelpSelect.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
+            // HelpText
+            // 
+            this.HelpText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.HelpText.Location = new System.Drawing.Point(175, 15);
+            this.HelpText.Name = "HelpText";
+            this.HelpText.Size = new System.Drawing.Size(613, 426);
+            this.HelpText.TabIndex = 1;
             // 
             // HelpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.treeView1);
+            this.Controls.Add(this.HelpText);
+            this.Controls.Add(this.HelpSelect);
             this.Name = "HelpForm";
             this.Text = "HelpForm";
             this.ResumeLayout(false);
@@ -77,6 +93,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView HelpSelect;
+        private System.Windows.Forms.Label HelpText;
     }
 }
